@@ -12,6 +12,7 @@ API:
 
 RequestHeader:
     "Content-Type" :"application/json"
+	
 Request Body:
     {
     	"items":
@@ -39,6 +40,7 @@ Response:
 
 RequestHeader:
  "Content-Type" :"application/json"
+ 
 Request Body:
 {
 	"items":
@@ -115,6 +117,7 @@ Response:
 
 RequestHeader:
 "Content-Type" :"application/json"
+
 Request Body:
 
 {
@@ -324,3 +327,90 @@ Response:
         ]
     }
 ]
+
+8. POST  /addOrder  (this is to add new order)
+
+RequestHeader:
+"Content-Type" :"application/json"
+
+RequestBody:
+{
+	"emailId": "",
+        "items": [
+          {
+            "itemId":153063957883500,
+            "orderQuantity": "12"
+          },
+          {
+            "itemId":153064112049900,
+            "orderQuantity": "12"
+          },
+          {
+            "itemId":156887992868300,
+            "orderQuantity": "12"
+          }
+        ]
+      
+}
+
+Response:
+{
+    "orderId": 159240533489100,
+    "emailId": "",
+    "items": [
+        {
+            "itemId": 153063957883500,
+            "orderQuantity": 12,
+            "orderStatus": "Success"
+        },
+        {
+            "itemId": 153064112049900,
+            "orderQuantity": 12,
+            "orderStatus": "Success"
+        },
+        {
+            "itemId": 156887992868300,
+            "orderQuantity": 12,
+            "orderStatus": "Failed. Available units :11"
+        }
+    ]
+}
+
+
+9. POST  /addOrder  (this is to update existing order)
+
+RequestHeader:
+"Content-Type" :"application/json"
+
+RequestBody:
+{
+		"orderId": 159240533489100,
+        "emailId": "",
+        "items": [
+          {
+            "itemId":156887992868300,
+            "orderQuantity": "11"
+          }
+        ]
+      
+}
+Response:
+{
+    "orderId": 159240533489100,
+    "emailId": "",
+    "items": [
+        {
+            "itemId": 156887992868300,
+            "orderQuantity": 11,
+            "orderStatus": "Success"
+        }
+    ]
+}
+
+10. Other Available Endpoints :
+
+DELETE /delete/allOrders - Deletes all orders
+DELETE /deleteOrderById/{orderId} - Delete order by id - {orderId}
+
+DELETE /delete/allItems - Deletes all items
+DELETE /deleteItem/{itemId} - - Delete item by id - {itemId}
