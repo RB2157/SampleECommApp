@@ -11,19 +11,18 @@ API:
 1.  POST /addItems (using for data creation-  Single Item)
 
 RequestHeader:
-"Content-Type" :"application/json"
+    "Content-Type" :"application/json"
 Request Body:
-{
-	"items":
-	[
     {
-     "itemDescription": "Desc1",
-      "itemQuantity": "10",
-     
-      "itemPrice": 300
+    	"items":
+    	[
+        {
+         "itemDescription": "Desc1",
+          "itemQuantity": "10",
+          "itemPrice": 300
+        }
+       ]
     }
-   ]
-}
 
 Response:
 [
@@ -39,7 +38,7 @@ Response:
 2.  POST /addItems (using for data creation-  Multiple Item)
 
 RequestHeader:
-"Content-Type" :"application/json"
+ "Content-Type" :"application/json"
 Request Body:
 {
 	"items":
@@ -47,39 +46,30 @@ Request Body:
     {
      "itemDescription": "Desc1",
       "itemQuantity": "10",
-     
-      "itemPrice": 300
+     "itemPrice": 300
     },
     {
      "itemDescription": "Desc2",
       "itemQuantity": "11",
-      
       "itemPrice": 300
     },
     {
      "itemDescription": "Desc3",
       "itemQuantity": "12",
-      
       "itemPrice": 300
     },
     {
      "itemDescription": "Desc4",
       "itemQuantity": "13",
-      
       "itemPrice": 300
     },
     {
      "itemDescription": "Desc5",
       "itemQuantity": "14",
-      
       "itemPrice": 300
     }
-    
-   
   ]
 }
-   
-
 
 Response:
 [
@@ -134,14 +124,12 @@ Request Body:
     "itemId": 153063493134400,
      "itemDescription": "Desc1",
       "itemQuantity": "10",
-     
       "itemPrice": 300
     }
-    
-  ]
+   ]
 }
-   
-Response:
+  
+  Response:
 [
     {
         "itemId": 153063493134400,
@@ -164,28 +152,23 @@ RequestHeader:
 	"itemId": 156887992868300,
      "itemDescription": "Desc1",
       "itemQuantity": "11",
-     
-      "itemPrice": 300
+    "itemPrice": 300
     },
     {
     "itemId": 156888164025900,
      "itemDescription": "Desc2",
       "itemQuantity": "1",
-      
       "itemPrice": 300
     },
     {
      "itemDescription": "Desc3",
       "itemQuantity": "12",
-      
       "itemPrice": 300
     }
-    
-   
-  ]
+     ]
 }
    
-Response (For 1st and 2nd item id remains same, as they are updated. New id is auto created for third item): 
+ Response (For 1st and 2nd item id remains same, as they are updated. New id is auto created for third item): 
 [
     {
         "itemId": 156887992868300,
@@ -284,7 +267,7 @@ Response:
 
 6. GET /getItem/153063493134400   (using for retrieving a specific item by id)
 
-
+Response :
 {
     "itemId": 153063493134400,
     "itemDescription": "Desc1",
@@ -292,7 +275,9 @@ Response:
     "itemPrice": 300
 }
 
-7. GET  allOrders  (used for getting all the orders)
+7. GET  /allOrders  (used for getting all the orders)
+
+Response:
 [
     {
         "orderId": 140851527791000,
